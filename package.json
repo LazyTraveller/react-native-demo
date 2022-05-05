@@ -9,6 +9,17 @@
     "test": "jest",
     "lint": "eslint ."
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js}": [
+      "yarn lint",
+      "yarn prettier"
+    ]
+  },
   "dependencies": {
     "@gm-rn/components": "^1.1.0-alpha.19",
     "@gm-rn/pda-scanner": "^1.1.0-alpha.19",
